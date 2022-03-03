@@ -10,7 +10,7 @@
 
 
 # Вариант а)
-def sum_list_1():
+def sum_list_1() -> int:
     dataset = []
     my_list = []
     sum_my_list = 0  # Вводим необходимые для вычисления списки и переменные
@@ -31,7 +31,7 @@ def sum_list_1():
 
 # Вариант б)
 
-def sum_list_2():
+def sum_list_2() -> int:
     dataset = []
     my_list = []
     sum_my_list_1 = 0  # Вводим необходимые для вычисления списки и переменные
@@ -52,7 +52,7 @@ def sum_list_2():
 
 # Вариант с)
 
-def sum_list_3():
+def sum_list_3() -> int:
     dataset = []
     sum_my_list_1 = 0  # Вводим необходимые для вычисления списки и переменные
     for n in range(1, 1000, 2):

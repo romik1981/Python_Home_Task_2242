@@ -14,7 +14,7 @@
 """
 
 
-def transform_string(n):
+def transform_string(n: int) -> str:
     if n % 10 == 1:
         return f'{n} процент'
     elif n % 10 == 2 or n % 10 == 3 or n % 10 == 4:

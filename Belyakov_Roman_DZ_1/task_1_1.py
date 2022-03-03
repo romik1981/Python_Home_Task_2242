@@ -23,7 +23,7 @@ duration = 400153
 
 # Функция для вычисления интервалов времени
 
-def convert_time(duration):
+def convert_time(duration: str) -> str:
     if duration < 60:
         return f'{duration} сек'  # Выводим количество секунд
     elif duration >= 60 and duration < 3600:
@@ -42,9 +42,10 @@ def convert_time(duration):
         seconds = (duration % 3600) % 60
         return f'{days} дн {hours} час {minutes} мин {seconds} сек'
 
+
 # Функция обратного перевода интервала времени в секунды
 
-def rev_check(result):
+def rev_check(result: str) -> str:
     if len(result) == 6:
         int_1 = int(result[:-4])  # Выводим количество секунд
         return f'{int_1} сек'
@@ -52,11 +53,16 @@ def rev_check(result):
         int_2 = int(result[-6:-4]) + int(result[:-11]) * 60  # Рассчитаем количество минут и секунд
         return f'{int_2} сек'
     elif len(result) == 18:
-        int_3 = int(result[-6:-4]) + int(result[-12:-10]) * 60 + int(result[:-17]) * 3600  #  Рассчитаем количество часов, минут и секунд
+        int_3 = int(result[-6:-4]) + int(result[-12:-10]) * 60 + int(
+            result[:-17]) * 3600  # Рассчитаем количество часов, минут и секунд
         return f'{int_3} сек'
-    elif len(result) >= 24:
-        int_4 = int(result[-6:-4]) + int(result[-13:-11]) * 60 + int(result[-19:-17]) * 3600 + int(result[:-22]) * 86400  #Рассчитаем количество дней, часов, минут и секунд
+    elif len(result) == 24:
+        int_4 = int(result[-6:-4]) + int(result[-13:-11]) * 60 + int(result[-19:-17]) * 3600 + int(
+            result[:-22]) * 86400  # Рассчитаем количество дней, часов, минут и секунд
         return f'{int_4} сек'
+    else:
+        return f'Формат строки не соответствует возможному к обратному преобразованию(смотрите примеры выше)!'
+
 
 print(convert_time(53))
 print(convert_time(153))
@@ -72,7 +78,6 @@ result = convert_time(duration)
 print(convert_time(duration))
 print(type(result))
 print(rev_check(result), end='\n\n\n')
-
 
 print(rev_check(result_1))
 print(rev_check(result_2))
