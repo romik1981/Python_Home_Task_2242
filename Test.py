@@ -1,40 +1,45 @@
-#Реализовать вывод информации о промежутке времени в зависимости от его продолжительности durationв секундах:
-#до минуты: <s> сек;
-#до часа: <m> мин <s> сек;
-#до суток: <h> час <m> мин <s> сек;
-#в остальных случаях: <d> дн <h> час <m> мин <s> сек.
-#Примеры:
-#> duration = 53
-#53 сек
-#> duration = 153
-#2 мин 33 сек
-#> duration = 4153
-#1 час 9 мин 13 сек
-#> duration = 400153
-#4 дн 15 час 9 мин 13 сек
 
-# Функция для вычисления интервалов времени
-def convert_time(duration):
-    if duration < 60:
-        return f'{duration} сек' # Выводим количество секунд
-    elif duration >= 60 and duration < 3600:
-        minutes = duration // 60  # Рассчитаем количество минут
-        seconds = duration % 60  # Рассчитаем количество секунд
-        return f'{minutes} мин {seconds} сек'
-    elif duration >= 3600 and duration < 86400:
-        hours = duration // 3600  # Рассчитаем количество часов
-        minutes = (duration % 3600) // 60
-        seconds = (duration % 3600) % 60
-        return  f'{hours} час {minutes} мин {seconds} сек'
-    elif duration >= 86400:
-        days = duration // 86400  # Рассчитаем количество дней
-        hours = (duration % 86400) // 3600
-        minutes = (duration % 3600) // 60
-        seconds = (duration % 3600) % 60
-        return  f'{days} дн {hours} час {minutes} мин {seconds} сек'
+#result = '13 сек'
+#result = '2 мин 33 сек'
+#result = '1 час 9 мин 13 сек'
+#result = '4 дн 15 час 9 мин 13 сек'
 
 
-duration = int(input('Введите временной интервал в сек: '))
-result = convert_time(duration)
-print(result)
-print(type(result))
+n = 12345
+n = str(n)
+print(n)
+
+sum = 0
+for i in n:
+    i = int(i)
+    sum += i
+
+print(sum)
+
+
+def sum_list_3():
+    dataset = []
+    # my_list = []
+    sum_my_list_1 = 0  # Вводим необходимые для вычисления списки и переменные
+    for n in range(1, 1000, 2):
+        n = n ** 3 + 17
+        dataset.append(n)  # Создаём список кубов нечетных чисел плюс 17
+    for n in dataset:
+        n = str(n)
+        sum = 0
+        for i in n:
+            i = int(i)
+            sum += i
+        n = int(n)
+        if sum % 7 == 0:
+            sum_my_list_1 += n
+
+    return sum_my_list_1
+
+
+print(sum_list_3())
+
+
+  # for indx in dataset:
+   #     sum_my_list_1 += indx  # Вычисляем сумму членов этого списка
+   # return sum_my_list_1  # Верните значение полученной суммы
