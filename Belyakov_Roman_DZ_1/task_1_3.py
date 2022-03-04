@@ -15,7 +15,9 @@
 
 
 def transform_string(n: int) -> str:
-    if n % 10 == 1:
+    if n == 11 or n == 12 or n == 13 or n == 14:
+        return f'{n} процентов'
+    elif n % 10 == 1:
         return f'{n} процент'
     elif n % 10 == 2 or n % 10 == 3 or n % 10 == 4:
         return f'{n} процента'
