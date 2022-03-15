@@ -20,31 +20,20 @@ def convert_list_in_str(list_in: list) -> str:
     i = 0
     while i < len(list_in):
         if list_in[i].isdigit() and int(list_in[i]) // 10 != 0:
-            list_in.insert(i, '"')
-            list_in.insert(i + 2, '"')
-            i += 2
+            list_in[i] = '"' + list_in[i] + '"'
+            i += 1
         elif list_in[i].isdigit():
-            list_in[i] = '0' + list_in[i]
-            list_in.insert(i, '"')
-            list_in.insert(i + 2, '"')
-            i += 2
+            list_in[i] = '"0' + list_in[i] + '"'
+            i += 1
         elif list_in[i][0] == '+':
-            list_in[i] = '+0' + list_in[i][1:]
-            list_in.insert(i, '"')
-            list_in.insert(i + 2, '"')
-            i += 2
+            list_in[i] = '"+0' + list_in[i][1:] + '"'
+            i += 1
         elif list_in[i][0] == '-':
-            list_in[i] = '-0' + list_in[i][1:]
-            list_in.insert(i, '"')
-            list_in.insert(i + 2, '"')
-            i += 2
+            list_in[i] = '"+0' + list_in[i][1:] + '"'
+            i += 1
         i += 1
-
+    print('Новый список не создан получился преобразованный: ', my_list, end='\n\n\n')
     str_out = ' '.join(list_in)
-    for _ in str_out:
-        if _ == ' ':
-            str_out.replace(_, '')
-    print('Новый список не создан изменился получился преобразованный: ', my_list, end='\n\n\n')
     return str_out
 
 
