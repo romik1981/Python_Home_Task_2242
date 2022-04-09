@@ -24,6 +24,6 @@ with open('nginx_logs.txt', 'r', encoding='utf-8') as fr:
         if not str_.split()[0] in dict_remote_addr:
             dict_remote_addr.setdefault(str_.split()[0], 1)  # Создаём позицию IP адрес: запро в dict_remote_addr
         else:
-            dict_remote_addr[str_.split()[0]] = dict_remote_addr[str_.split()[0]] + 1
+            dict_remote_addr[str_.split()[0]] += 1
 
 print('IP aдрес спамера и число его запросов: ', get_spam_addr(dict_remote_addr))
