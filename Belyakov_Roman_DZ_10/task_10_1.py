@@ -48,7 +48,7 @@ class Matrix:
             return f'Матрицы невозможно сложить!'
         return self
         # return ((self.matrix[i][i_1] + other.matrix[i][i_1] for i_1 in range(len(other.matrix[i])))
-        # for i in range(len(self.matrix)))
+        # for i in range(len(self.matrix))) # Выдает генератор.
 
 
 # Создаем классы и  проверяем работу методов.
