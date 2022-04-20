@@ -18,6 +18,7 @@ parsed_raw = ('188.138.60.101', '17/May/2015:08:05:49 +0000', 'GET',
 import re
 
 pattern = r"(?P<addres>^\S+)[\s-]*\[(?P<datatime>.*)]\s*\"(?P<resp>\w*)\s*(?P<file>[/\w]+)[^\"]+\"\s+(?P<code>\d+)\s+(?P<size>\d+)"
+#r"([\d*.]+)[\s-]*\[(.*)]\s*\"(\w*)\s*(\w*\S*)[^\"]*\"\s+(\d+)\s+(\d+)"
 # r"(?P<addres>^((\d|[a-fA-F]){0,4}[\.\:]?){4,8})[\s-]*\[(?P<datatime>.*)\]\s*\"(?P<req>\w*)\s*(?P<file>[/\w]+)[^\"]+\"\s+(?P<code>\d+)\s+(?P<size>\d+)")
 #  варианты регулярных выражений
 PARSE_RE = re.compile(pattern)

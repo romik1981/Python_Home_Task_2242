@@ -14,8 +14,7 @@ ValueError: wrong email: someone@geekbrainsru
 
 import re
 
-pattern = r"^(?P<key>[a-zA-Z0-9]+)@(?P<val>[a-z]+\.[a-z]+)$"  # шаблон регулярного выражения
-
+pattern = r"^(?P<key>[a-zA-Z0-9\_/-]+)@(?P<val>[a-z]+\.[a-z]+)$"  # шаблон регулярного выражения
 def email_parse(email_address: str):
     """
     Функция извлекает имя пользователя почтовый домен из email адреса и возвращает в виде словаря
@@ -37,8 +36,8 @@ print(email_parse.__name__) # вывод названия функции
 print(email_parse.__doc__)  # вывод её документирования
 
 
-email_parse('some123@geekbrains.ru')
+email_parse('some-123@geekbrains.ru')
 email_parse('Someone@geekbrains.ru')
-email_parse('Someone@geekbrains.com')
+email_parse('Some_one/@geekbrains.com')
 email_parse('someone.geekbrains.ru')
-email_parse('ret/o@gmail.com')
+email_parse('retапр/o@gmail.com')
