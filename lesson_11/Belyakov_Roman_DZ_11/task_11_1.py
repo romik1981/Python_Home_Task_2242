@@ -164,7 +164,7 @@ class Game(LottoCard):
 
         return 0
 
-
+# Программу можно использовать как модуль в других кодах
 if __name__ == '__main__':
     p = Player()
 
