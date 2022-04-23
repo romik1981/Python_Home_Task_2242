@@ -119,6 +119,14 @@ class Game(LottoCard):
         return f'Выпал бочонок: {self.keg} (осталось {len(self.kegs)})'
 
     def play_round(self):
+        """
+        Игровой раунд
+        :return:
+        0 - Игра продолжается
+        1 - Пользователь проиграл
+        2 - Пользователь выиграл
+        3 - Игра завершена
+        """
         print(game.get_keg())
         print(p, com, sep='\n')
         user_answer = input('Зачеркнуть цифру? (y/n) \n Для завершения введите (q)')
