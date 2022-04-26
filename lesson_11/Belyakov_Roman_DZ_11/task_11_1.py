@@ -62,7 +62,7 @@ class LottoCard:
             i.sort()
         for _ in range(4):
             for i in self.card:
-                i.insert(random.randrange(len(self.card)), '  ')
+                i.insert(random.randrange(len(self.card)), '')
 
      def __str__(self):
          under_line = "-" * 35
