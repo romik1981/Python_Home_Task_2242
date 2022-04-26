@@ -18,4 +18,3 @@ except OwnError as err:
 
 else:
     print(f'Всё хорошо! Результат деления: {a / b}')
-
